@@ -59,5 +59,20 @@
 						google.maps.event.addListener(marker, 'click', function() {infowindow.open(map,marker);});
 						 
 					 }// Fin muestra mapa
-				
+					llistar();
 				});
+function llistar(){
+	$.ajax({
+	type:"POST",
+	url:"http://www.grupllobet.com/apptest/MarcarPunts/llistar.php",
+	dataType:"JSON",
+	success:function(data){
+				if(data.estado=="ok"){
+					alert("Hi ha punts en la BD");
+				}
+				else{
+					alert("No hi ha punts en la BD");
+				}
+			}
+	});
+}
