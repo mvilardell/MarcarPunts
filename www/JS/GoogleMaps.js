@@ -1,10 +1,12 @@
 // JavaScript Document
 
+// JavaScript Document
+
 	$( document ).on( "pageinit", "#paginaMapa", "#page2", function(e,data) {
 
 				
 				var defaultPos = new google.maps.LatLng(19.289168,-99.653440);
-				
+				var marcadores_bd = [];
 				if (navigator.geolocation) {
 		                function exito(pos) {
                      		MuestraMapa(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
@@ -59,14 +61,14 @@
 						google.maps.event.addListener(marker, 'click', function() {infowindow.open(map,marker);});
 						 
 					 }// Fin muestra mapa
-					alert("entra");
 					llistar();
 				});
 function llistar(){
 	$.ajax({
 	type:"POST",
-	url:"http://www.grupllobet.com/apptest/MarcarPunts/llistar.php",
+	url:"http://www.grupllobet.com/apptest/MarcarPunts/iajax.php",
 	dataType:"JSON",
+	data:"&tipo=listar",
 	success:function(data){
 				if(data.estado=="ok"){
 					alert("Hi ha punts en la BD");
