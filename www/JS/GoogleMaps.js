@@ -1,7 +1,5 @@
 // JavaScript Document
 
-// JavaScript Document
-
 	$( document ).on( "pageinit", "#paginaMapa", "#page2", function(e,data) {
 
 				
@@ -10,7 +8,8 @@
 				if (navigator.geolocation) {
 		                function exito(pos) {
                      		MuestraMapa(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
-
+							MuestraMapa(new google.maps.LatLng(41.7647181, 1.8741591000000426));
+							MuestraMapa(new google.maps.LatLng(41.7647183, 1.8741591000000429));
                    		}
 						function falla(error) {
 						//si falla mostrar mpara en posicion por defecto
