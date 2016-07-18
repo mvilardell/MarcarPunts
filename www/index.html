@@ -14,26 +14,6 @@
         <script>
 		var marcadors_bd= [];
 		$(function() {
-			$(document).on("ready", function(){
-				llistar();
-			});
-			
-			function llistar(){
-				$.ajax({
-						type:"POST",
-						url:"http://www.grupllobet.com/apptest/MarcarPunts/llistar.php",
-						dataType:"JSON",
-						success:function(data){
-							if(data.estado=="ok"){
-								alert("Hi ha punts en la BD");
-							}
-							else{
-								alert("No hi ha punts en la BD");
-							}
-						}
-					});
-			}
-			
 			$("#guardardatos").click(function() {
 				var fNombre = $("#Nombre").val();
    				var fDescripcion = $("#Descripcion").val();
